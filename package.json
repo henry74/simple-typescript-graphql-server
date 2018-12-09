@@ -12,9 +12,7 @@
     "start": "yarn build && node dist/index.js",
     "start:dev": "npm-run-all --parallel build:watch inspect",
     "inspect": "nodemon --inspect=0.0.0.0:9229 dist/index.js",
-    "dev": "ts-node src/index.ts",
-    "schema-download": "yarn apollo service:download",
-    "generate": "gql-gen --config ./config/codegen.yml"
+    "generate": "./tools/generate-gql.sh"
   },
   "dependencies": {
     "apollo-server-express": "^2.2.6",
