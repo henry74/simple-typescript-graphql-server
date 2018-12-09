@@ -6,9 +6,22 @@ const modules = [require("./queries/query"), require("./mutations/mutation")];
 
 const mainDefs = [
   `
+    type Query {
+      dummy: String
+    }
+    
+    type Mutation {
+      dummy: String
+    }
+    
+    type Subscription {
+      dummy: String
+    }
+    
     schema {
-        query: Query,
-        mutation: Mutation
+      query: Query
+      mutation: Mutation
+      subscription: Subscription
     }
 `
 ];

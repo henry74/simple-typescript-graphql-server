@@ -21,7 +21,7 @@ export const typeDef = gql`
     author: String
   }
 
-  type Query {
+  extend type Query {
     books: [Book]
   }
 `;

@@ -2,7 +2,7 @@ import { gql } from "apollo-server-express";
 
 export const typeDef = gql`
   # Mutations
-  type Mutation {
+  extend type Mutation {
     setFakeStatus(status: String!): String
   }
 `;
