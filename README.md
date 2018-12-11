@@ -19,11 +19,13 @@ src
 ## Change Log (Added)
 
 - Foundational code with sample query & mutation (playground @ /graphql)
-- Generate types.ts based on schema (./tools/generate-gql.sh)
+- Generate types.ts based on schema (yarn generate)
+- Base-line folder structure and schema merging strategy
 
 ## Todo
 
 - Setup instructions
 - Docker-related functionality
 - Webpack or Packer
-- Base-line folder structure and schema merging strategy
+- Authentication
+- RBAC 
