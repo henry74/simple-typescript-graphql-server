@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "template",
   "main": "dist/index.js",
+  "types": "src/types.d.ts",
   "repository": "git@github.com:henry74/simple-typescript-graphql-server.git",
   "author": "henry74 <henry74@gmail.com>",
   "license": "MIT",

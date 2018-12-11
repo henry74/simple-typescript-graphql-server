@@ -3,6 +3,8 @@
 // ====================================================
 
 export interface Query {
+  dummy?: string | null;
+
   books?: (Book | null)[] | null;
 }
 
@@ -13,7 +15,13 @@ export interface Book {
 }
 
 export interface Mutation {
+  dummy?: string | null;
+
   setFakeStatus?: string | null;
+}
+
+export interface Subscription {
+  dummy?: string | null;
 }
 
 // ====================================================
