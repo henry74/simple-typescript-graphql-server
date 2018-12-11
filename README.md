@@ -26,6 +26,8 @@ src
 
 - Setup instructions
 - Docker-related functionality
+- [dataloader](https://github.com/facebook/dataloader)
 - Webpack or Packer
 - Authentication
 - RBAC 
+- Links to good type design examples
