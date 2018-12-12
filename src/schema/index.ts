@@ -2,7 +2,7 @@ import { GraphQLSchema } from "graphql";
 import { makeExecutableSchema, addMockFunctionsToSchema } from "graphql-tools";
 
 /* tslint:disable:no-var-requires */
-const modules = [require("./queries/query"), require("./mutations/mutation")];
+const modules = [require("./queries"), require("./mutations")];
 
 const mainDefs = [
   `
@@ -38,7 +38,7 @@ const resolvers = modules.reduce((state, m) => {
 }, {});
 
 const typeDefs = mainDefs.concat(
-  modules.map(m => m.typeDef).filter(res => !!res)
+  ...modules.map(m => m.typeDef).filter(res => !!res) // flatten with ...
 );
 
 const schema: GraphQLSchema = makeExecutableSchema({
