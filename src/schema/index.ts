@@ -27,13 +27,13 @@ const mainDefs = [
 ];
 
 const resolvers = modules.reduce((state, m) => {
-  if (!m.resolver) {
+  if (!m.resolvers) {
     return state;
   }
 
   return {
     ...state,
-    ...m.resolver
+    ...m.resolvers
   };
 }, {});
 

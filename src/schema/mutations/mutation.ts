@@ -7,9 +7,9 @@ export const typeDef = gql`
   }
 `;
 
-export const resolver = {
+export const resolvers = {
   Mutation: {
-    async setFakeStatus(root, args, context) {
+    setFakeStatus: async (root, args, context) => {
       const response = `Set status to ${args.status}`;
       console.log(response);
       return response;
