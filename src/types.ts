@@ -1,27 +1,29 @@
+export type Maybe<T> = T | null;
+
 // ====================================================
 // Types
 // ====================================================
 
 export interface Query {
-  dummy?: string | null;
+  dummy?: Maybe<string>;
 
-  books?: (Book | null)[] | null;
+  books?: Maybe<(Maybe<Book>)[]>;
 }
 
 export interface Book {
-  title?: string | null;
+  title?: Maybe<string>;
 
-  author?: string | null;
+  author?: Maybe<string>;
 }
 
 export interface Mutation {
-  dummy?: string | null;
+  dummy?: Maybe<string>;
 
-  setFakeStatus?: string | null;
+  setFakeStatus?: Maybe<string>;
 }
 
 export interface Subscription {
-  dummy?: string | null;
+  dummy?: Maybe<string>;
 }
 
 // ====================================================
