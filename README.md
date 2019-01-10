@@ -19,15 +19,14 @@ src
 ## Change Log (Added)
 
 - Foundational code with sample query & mutation (playground @ /graphql)
-- Generate types.ts based on schema (yarn generate)
+- Generate types.ts based on schema using `yarn generate`
 - Base-line folder structure and schema merging strategy
+- Dockerfile created
 
 ## Todo
 
 - Setup instructions
-- Docker-related functionality
 - [dataloader](https://github.com/facebook/dataloader)
-- Webpack or Packer
 - Authentication
-- RBAC 
+- RBAC
 - Links to good type design examples
