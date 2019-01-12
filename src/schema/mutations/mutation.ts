@@ -1,4 +1,5 @@
 import { gql } from "apollo-server-express";
+import logger from "../../util/logger";
 
 export const typeDef = gql`
   # Mutations
@@ -11,7 +12,7 @@ export const resolvers = {
   Mutation: {
     setFakeStatus: async (root, args, context) => {
       const response = `Set status to ${args.status}`;
-      console.log(response);
+      logger.debug(response);
       return response;
     }
   }

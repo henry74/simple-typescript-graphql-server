@@ -13,7 +13,9 @@ src
 │   │   └── query.ts # match file name to query; can group queries into folders
 │   ├── subscriptions
 │   └── types # all data and input types shared across queries, mutations, and other types
-└── types.ts # yarn generate; import for automatic type checking
+├── types.ts # yarn generate; import for automatic type checking
+└── util # utility libraries
+    └── logger.ts
 ```
 
 ## Change Log (Added)
@@ -22,11 +24,14 @@ src
 - Generate types.ts based on schema using `yarn generate`
 - Base-line folder structure and schema merging strategy
 - Dockerfile created
+- Add logger based on [winston](https://github.com/winstonjs/winston)
 
 ## Todo
 
 - Setup instructions
 - [dataloader](https://github.com/facebook/dataloader)
 - Authentication
-- RBAC
+- RBAC using [graphql-shield](https://github.com/maticzav/graphql-shield)
 - Links to good type design examples
+- Handle environment variables
+- Middleware layer using [graphql-middleware](https://github.com/prisma/graphql-middleware)
