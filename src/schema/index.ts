@@ -1,8 +1,9 @@
 import { GraphQLSchema } from "graphql";
-import { makeExecutableSchema, addMockFunctionsToSchema } from "graphql-tools";
+import { makeExecutableSchema } from "graphql-tools";
+import { merge } from "lodash";
 
 /* tslint:disable:no-var-requires */
-const modules = [require("./queries"), require("./mutations")];
+const modules = [require("./mutations"), require("./books")];
 
 const mainDefs = [
   `
@@ -26,16 +27,13 @@ const mainDefs = [
 `
 ];
 
-const resolvers = modules.reduce((state, m) => {
-  if (!m.resolvers) {
-    return state;
-  }
-
-  return {
-    ...state,
-    ...m.resolvers
-  };
-}, {});
+const resolvers = merge(
+  modules.map(m => {
+    if (m.resolvers) {
+      return m.resolvers;
+    }
+  })
+);
 
 const typeDefs = mainDefs.concat(
   ...modules.map(m => m.typeDef).filter(res => !!res) // flatten with ...
@@ -43,17 +41,13 @@ const typeDefs = mainDefs.concat(
 
 const schema: GraphQLSchema = makeExecutableSchema({
   logger: console,
+  allowUndefinedInResolve: false,
   resolverValidationOptions: {
-    requireResolversForNonScalar: false
+    requireResolversForNonScalar: true,
+    requireResolversForArgs: true
   },
   resolvers,
   typeDefs
-});
-
-addMockFunctionsToSchema({
-  mocks: {},
-  preserveResolvers: true,
-  schema
 });
 
 export { schema };
