@@ -1,10 +1,11 @@
 import * as express from "express";
+import * as compression from "compression";
 import { ApolloServer } from "apollo-server-express";
 import { schema } from "./schema";
 import logger from "./util/logger";
 
 const app = express();
-
+app.use(compression());
 const context = {
   // add context objects here
 };

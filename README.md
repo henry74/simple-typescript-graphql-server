@@ -25,6 +25,7 @@ src
 - Base-line folder structure and schema merging strategy
 - Dockerfile created
 - Add logger based on [winston](https://github.com/winstonjs/winston)
+- GZIP compression
 
 ## Todo
 
@@ -35,3 +36,5 @@ src
 - Links to good type design examples
 - Handle environment variables
 - Middleware layer using [graphql-middleware](https://github.com/prisma/graphql-middleware)
+- 3rd Party REST API integration
+- Schema stitching
