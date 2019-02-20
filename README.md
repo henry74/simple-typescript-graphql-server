@@ -1,29 +1,49 @@
 # Simple GraphQL Server (Apollo-based)
 
+## Setup
+
+## Making changes
+
 ## Folder Hierarchy
 
-```shell
-src
-├── index.ts # launches server
-├── schema
-│   ├── index.ts # combine and export all typedefs and resolvers into single schema
-│   ├── mutations # all mutations and associated resolvers
-│   │   └── mutation.ts # match file name to mutation; can group mutatations into folders
-│   ├── queries # all queries and associated resolvers
-│   │   └── query.ts # match file name to query; can group queries into folders
-│   ├── subscriptions
-│   └── types # all data and input types shared across queries, mutations, and other types
-├── types.ts # yarn generate; import for automatic type checking
-└── util # utility libraries
-    └── logger.ts
+```bash
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── package.json
+├── src
+│   ├── generatedTypes.ts # yarn generate; import for automatic type checking
+│   ├── index.ts
+│   ├── schema #launches server
+│   │   ├── books # alternative schema can also be organized by entities
+│   │   │   ├── index.ts
+│   │   │   ├── mutations.ts
+│   │   │   ├── queries.ts
+│   │   │   └── types.ts
+│   │   ├── index.ts # combine and export all typedefs and resolvers into single schema
+│   │   ├── mutations # all mutations and associated resolvers
+│   │   │   ├── index.ts
+│   │   │   └── mutation.ts
+│   │   ├── queries # match file name to query; can group queries into folders
+│   │   │   ├── index.ts
+│   │   │   └── query.ts
+│   │   ├── subscriptions
+│   │   └── types # all data and input types shared across queries, mutations, and other types
+│   └── util  # utility libraries
+│       └── logger.ts
+├── tools
+│   ├── codegen.yml # gql-gen command configuration
+│   └── generate-gql.sh # launch server for generateTypes.ts; then kill process
+├── tsconfig.json
+└── yarn.lock
 ```
 
 ## Change Log (Added)
 
 - Foundational code with sample query & mutation (playground @ /graphql)
-- Generate types.ts based on schema using `yarn generate`
+- Add generatedTypes.ts based on schema using `yarn generate`
 - Base-line folder structure and schema merging strategy
-- Dockerfile created
+- Dockerfile with health check
 - Add logger based on [winston](https://github.com/winstonjs/winston)
 - GZIP compression
 
@@ -36,5 +56,5 @@ src
 - Links to good type design examples
 - Handle environment variables
 - Middleware layer using [graphql-middleware](https://github.com/prisma/graphql-middleware)
-- 3rd Party REST API integration
+- 3rd Party REST API integration (w/ LRU caching)
 - Schema stitching
