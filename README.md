@@ -13,8 +13,8 @@
 ├── package.json
 ├── src
 │   ├── generatedTypes.ts # yarn generate; import for automatic type checking
-│   ├── index.ts
-│   ├── schema #launches server
+│   ├── index.ts #launches server
+│   ├── schema
 │   │   ├── books # alternative schema can also be organized by entities
 │   │   │   ├── index.ts
 │   │   │   ├── mutations.ts
