@@ -30,9 +30,7 @@ const logger = createLogger({
   level: NODE_ENV === "production" ? "error" : "debug",
   format: combine(
     timestamp({
-      format: () => {
-        return new Date().toLocaleString();
-      }
+      format: "YYYY-MM-DD HH:mm:ss"
     }),
     logFormatter
   ),

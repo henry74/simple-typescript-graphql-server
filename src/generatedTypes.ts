@@ -20,6 +20,8 @@ export interface Mutation {
   dummy?: Maybe<string>;
 
   setFakeStatus?: Maybe<string>;
+
+  addBooks?: Maybe<string>;
 }
 
 export interface Subscription {
@@ -32,4 +34,7 @@ export interface Subscription {
 
 export interface SetFakeStatusMutationArgs {
   status: string;
+}
+export interface AddBooksMutationArgs {
+  title: string;
 }
