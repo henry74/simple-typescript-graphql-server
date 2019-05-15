@@ -3,6 +3,7 @@ import * as compression from "compression";
 import { ApolloServer } from "apollo-server-express";
 import { schema } from "./schema";
 import logger from "./util/logger";
+import { GraphQLError } from "graphql";
 
 const app = express();
 app.use(compression());
@@ -16,7 +17,7 @@ const server = new ApolloServer({
   introspection: true,
   formatError: error => {
     logger.error(error);
-    return new Error("Internal server error");
+    return new GraphQLError(error.message, null, null, null, null, error);
   }
 });
 
