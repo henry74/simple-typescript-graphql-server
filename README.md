@@ -12,8 +12,10 @@
 ├── README.md
 ├── package.json
 ├── src
+│   |── config
+│   |   └── envVars.ts # load environment variables
 │   ├── generatedTypes.ts # yarn generate; import for automatic type checking
-│   ├── index.ts #launches server
+│   ├── index.ts # launches server
 │   ├── schema
 │   │   ├── books # alternative schema can also be organized by entities
 │   │   │   ├── index.ts
@@ -46,6 +48,7 @@
 - Dockerfile with health check
 - Add logger based on [winston](https://github.com/winstonjs/winston)
 - GZIP compression
+- Handle environment variables
 
 ## Todo
 
@@ -54,7 +57,6 @@
 - Authentication
 - RBAC using [graphql-shield](https://github.com/maticzav/graphql-shield)
 - Links to good type design examples
-- Handle environment variables
 - Middleware layer using [graphql-middleware](https://github.com/prisma/graphql-middleware)
 - 3rd Party REST API integration (w/ LRU caching)
 - Schema stitching
