@@ -11,7 +11,7 @@
     "build": "rm -rf dist && tsc",
     "build:watch": "rm -rf dist && tsc -w",
     "start": "yarn build && node dist/index.js",
-    "start:dev": "npm-run-all --parallel build:watch inspect",
+    "start:dev": "ts-node-dev --transpile-only src/index.ts",
     "inspect": "nodemon --inspect=0.0.0.0:9229 dist/index.js",
     "generate": "./tools/generate-gql.sh"
   },
@@ -20,17 +20,17 @@
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "graphql": "^14.3.1",
-    "graphql-middleware": "^3.0.2",
-    "lodash": "^4.17.19"
+    "graphql": "^15.4.0",
+    "graphql-middleware": "^4.0.2",
+    "lodash": "^4.17.19",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.0",
-    "graphql-code-generator": "^0.18.2",
-    "graphql-codegen-typescript-server": "^0.18.2",
-    "nodemon": "^1.19.1",
-    "npm-run-all": "^4.1.5",
-    "ts-node": "^8.2.0",
-    "typescript": "^3.4.5"
+    "@graphql-codegen/cli": "^1.19.4",
+    "@graphql-codegen/typescript-resolvers": "^1.18.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "typescript": "^4.1.2"
   }
 }
