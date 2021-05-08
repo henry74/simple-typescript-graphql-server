@@ -22,7 +22,7 @@
     "express": "^4.17.1",
     "graphql": "^15.4.0",
     "graphql-middleware": "^4.0.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "winston": "^3.2.1"
   },
   "devDependencies": {
